@@ -15,18 +15,20 @@ module.exports = function (RED) {
             msg.task_id = (msg.task_id || "").toString();
             format_values(msg)
             format_values(config)
-            if (validator.isURL(config.url) && !validator.isEmpty(config.container_name) && !validator.isEmpty(msg.task_id) && !validator.isEmpty(config.user_id) && !validator.isEmpty(config.password)) {
+            if (validator.isURL(config.url) && !validator.isEmpty(container_name) && !validator.isEmpty(msg.task_id) && !validator.isEmpty(user_id) && !validator.isEmpty(password)) {
                 config.url = remove_slash(config.url)
                 var headers = {
-                    'Authorization': 'Basic ' + new Buffer(config.user_id + ':' + config.password).toString('base64'),
+                    'Authorization': 'Basic ' + new Buffer(user_id + ':' + password).toString('base64'),
                     'Content-Type': 'application/json',
                     'X-KIE-ContentType': 'JSON'
                 };
 
                 var options = {
                     method: 'PUT',
-                    uri: config.url + '/containers/' + config.container_name + '/tasks/' + msg.task_id + '/states/claimed',
-                    headers: headers
+                    uri: config.url + '/containers/' + container_name + '/tasks/' + msg.task_id + '/states/completed',
+                    headers: headers,
+					body: msg.payload,
+					json: true
                 }
 
                 request(options, function (error, response, body) {
@@ -38,44 +40,13 @@ module.exports = function (RED) {
                         node.error(error);
                         clear_status(node)
                     } else {
-                        options = {
-                            method: 'GET',
-                            uri: config.url + '/containers/' + config.container_name + '/tasks/' + msg.task_id + '/contents/input',
-                            headers: headers
-                        }
-                        request(options, function (err, resp, body) {
-                            if (err) {
-                                msg.statusCode = 500;
-                                msg.statusMessage = 'Internal server error';
-                                msg.payload = error;
-                                show_status(node, 'error')
-                                node.error(err);
-                                clear_status(node)
-                            } else {
-                                options = {
-                                    method: 'PUT',
-                                    uri: config.url + '/containers/' + config.container_name + '/tasks/' + msg.task_id + '/states/started',
-                                    headers: headers
-                                }
-                                request(options, function (er, res, body) {
-                                    if (er) {
-                                        msg.statusCode = 500;
-                                        msg.statusMessage = 'Internal server error';
-                                        msg.payload = error;
-                                        show_status(node, 'error')
-                                        node.error(er);
-                                    } else {
-                                        show_status(node, 'success')                                                                           
-                                        msg.statusCode = response.statusCode;
-                                        msg.statusMessage = response.statusMessage;                                                  
-                                        msg.payload = response.body;
-                                    }
-                                    node.send(msg);
-                                    clear_status(node)
-                                });
-                            }
-                        });
+                        show_status(node, 'success')                                                                           
+                        msg.statusCode = response.statusCode;
+                        msg.statusMessage = response.statusMessage;                                                  
+                        msg.payload = response.body;
                     }
+                    node.send(msg);
+                    clear_status(node)
                 });
             } else {
                 msg.statusCode = 500;
