@@ -1,0 +1,49 @@
+<script type="text/javascript">
+    RED.nodes.registerType('list-tasks', {
+        category: 'jBPM',
+        color: '#e7e7ae',
+        defaults: {
+            name: {
+                value: ""
+            },
+            url: {
+                value: ""
+            },           
+            user_id: {
+                value: ""
+            },
+            password: {
+                value: ""
+            }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'white-globe.png',
+        label: function () {
+            return this.name || 'list-tasks'
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="list-tasks">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="fa fa-globe"></i> URL</label>
+        <input type="url" id="node-input-url" placeholder="/url">
+    </div>
+    <div class="form-row">
+        <label for="node-input-user_id"><i class="fa fa-user"></i> UserID</label>
+        <input type="text" id="node-input-user_id" placeholder="UserID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-password"><i class="fa fa-key"></i> Password</label>
+        <input type="password" id="node-input-password" placeholder="Password">
+    </div>
+</script>
+
+<script type="text/x-red" data-temlate-help="list-tasks">
+    <p>A simple node for jBPM list tasks</p>
+</script>

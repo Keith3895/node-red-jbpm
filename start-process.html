@@ -1,0 +1,93 @@
+<script type="text/javascript">
+    RED.nodes.registerType('start-process', {
+        category: 'jBPM',
+        color: '#e7e7ae',
+        defaults: {
+            name: {
+                value: ""
+            },
+            url: {
+                value: ""
+            },
+            container_name: {
+                value: ""
+            },
+            process_name: {
+                value: ""
+            },
+            user_id: {
+                value: ""
+            },
+            password: {
+                value: ""
+            }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'white-globe.png',
+        label: function () {
+            return this.name || 'start-process'
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="start-process">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="fa fa-globe"></i> URL</label>
+        <input type="url" id="node-input-url" placeholder="/url">
+    </div>
+    <div class="form-row">
+        <label for="node-input-container_name"><i class="icon-tag"></i> Container</label>
+        <input type="text" id="node-input-container_name" placeholder="Container">
+    </div>
+    <div class="form-row">
+        <label for="node-input-process_name"><i class="icon-tag"></i> Process</label>
+        <input type="text" id="node-input-process_name" placeholder="Process">
+    </div>
+    <div class="form-row">
+        <label for="node-input-user_id"><i class="fa fa-user"></i> UserID</label>
+        <input type="text" id="node-input-user_id" placeholder="UserID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-password"><i class="fa fa-key"></i> Password</label>
+        <input type="password" id="node-input-password" placeholder="Password">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="start-process">
+    <p>Node to start a jBPM process Instance in node-red</p>
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">JSON</span>
+        </dt>
+        <dd> the payload has to be a empty JSON object</dd>
+        <dt>URL
+            <span class="property-type">String</span>
+        </dt>
+        <dd> The base url of the kie-server</dd>
+        <dt>Container
+            <span class="property-type">String</span>
+        </dt>
+        <dd>The container Id of jBPM project</dd>
+        <dt>Process
+            <span class="property-type">String</span>
+        </dt>
+        <dd>The process Definition Id. </dd>
+        <dt>UserId and Password
+            <span class="property-type">String</span>
+        </dt>
+        <dd>The Users Credentials </dd>
+    </dl>
+    <h3>Output</h3>    
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">JSON</span>
+        </dt>
+        <dd> the process Instance Id (pInstanceId)</dd>
+    </dl>
+</script>

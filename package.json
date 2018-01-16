@@ -1,0 +1,20 @@
+{
+    "name": "node-red-jbpm",
+    "node-red": {
+        "nodes": {
+            "start-process": "start-process.js",
+            "check-in": "check-in.js",
+            "check-out": "check-out.js",
+            "list-tasks": "list-tasks.js",
+            "claim-task": "claim-task.js",
+            "get-input": "get-input.js",
+            "set-output": "set-output.js",
+            "start-task": "start-task.js",
+            "complete-task": "complete-task.js"
+        }
+    },
+    "dependencies": {
+        "request": "^2.81.0",
+        "validator": "^8.1.0"
+    }
+}

@@ -1,0 +1,56 @@
+<script type="text/javascript">
+    RED.nodes.registerType('get-input', {
+        category: 'jBPM',
+        color: '#e7e7ae',
+        defaults: {
+            name: {
+                value: ""
+            },
+            url: {
+                value: ""
+            },
+            container_name: {
+                value: ""
+            },           
+            user_id: {
+                value: ""
+            },
+            password: {
+                value: ""
+            }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'white-globe.png',
+        label: function () {
+            return this.name || 'get-input'
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="get-input">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="fa fa-globe"></i> URL</label>
+        <input type="url" id="node-input-url" placeholder="/url">
+    </div>
+    <div class="form-row">
+        <label for="node-input-container_name"><i class="icon-tag"></i> Container</label>
+        <input type="text" id="node-input-container_name" placeholder="Container">
+    </div>
+    <div class="form-row">
+        <label for="node-input-user_id"><i class="fa fa-user"></i> UserID</label>
+        <input type="text" id="node-input-user_id" placeholder="UserID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-password"><i class="fa fa-key"></i> Password</label>
+        <input type="password" id="node-input-password" placeholder="Password">
+    </div>
+</script>
+
+<script type="text/x-red" data-temlate-help="get-input">
+    <p>A simple node for jBPM get input</p>
+</script>
