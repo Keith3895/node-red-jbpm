@@ -1,5 +1,7 @@
 {
     "name": "node-red-jbpm",
+    "version": "1.0.0",
+    "license": "MIT",
     "node-red": {
         "nodes": {
             "start-process": "start-process.js",
