@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('get-child-process', {
+    RED.nodes.registerType('delegate-task', {
         category: 'jBPM',
         color: '#e7e7ae',
         defaults: {
@@ -12,9 +12,12 @@
             container_name: {
                 value: ""
             },   
-            process_instance_id:{
+            task_id:{
                 value:""
-            },        
+            },    
+            DelegateUser_id: {
+                value: ""
+            },    
             user_id: {
                 value: ""
             },
@@ -26,12 +29,12 @@
         outputs: 1,
         icon: 'white-globe.png',
         label: function () {
-            return this.name || 'get-child-process'
+            return this.name || 'delegate-task'
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="get-child-process">
+<script type="text/x-red" data-template-name="delegate-task">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -45,8 +48,12 @@
         <input type="text" id="node-input-container_name" placeholder="Container">
     </div>
     <div class="form-row">
-        <label for="node-input-process_instance_id"><i class="icon-tag"></i> Process Instance Id</label>
-        <input type="text" id="node-input-process_instance_id" placeholder="Process Instance Id">
+        <label for="node-input-task_id"><i class="icon-tag"></i> Task Id</label>
+        <input type="text" id="node-input-task_id" placeholder="Task Id">
+    </div>
+    <div class="form-row">
+        <label for="node-input-DelegateUser_id"><i class="fa fa-user"></i> Asign to</label>
+        <input type="text" id="node-input-DelegateUser_id" placeholder="Asign to user">
     </div>
     <div class="form-row">
         <label for="node-input-user_id"><i class="fa fa-user"></i> UserID</label>
@@ -58,8 +65,8 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="get-child-process">
-    <p>A simple node for jBPM to get Child Process details.</p>
+<script type="text/x-red" data-help-name="delegate-task">
+    <p>A simple node for jBPM to delegate a task.</p>
     <h3>Input</h3>
     <dl class="message-properties">
     <dt>url
@@ -70,10 +77,14 @@
         <span class="property-type">String</span>
     </dt>
     <dd>The container Id of jBPM project</dd>
-    <dt>Process_instance_id
+    <dt>task_id
         <span class="property-type">String</span>
     </dt>
-    <dd>The process Instance Id.</dd>
+    <dd>The Task Instance Id.</dd>
+    <dt>Asign To
+        <span class="property-type">String</span>
+    </dt>
+    <dd>'DelegateUser_id' is the user to who the task is asigned.</dd>
     <dt>UserId and Password
         <span class="property-type">String</span>
     </dt>

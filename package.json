@@ -1,6 +1,6 @@
 {
     "name": "node-red-jbpm",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "license": "MIT",
     "node-red": {
         "nodes": {
@@ -14,7 +14,9 @@
             "start-task": "./lib/start-task.js",
             "complete-task": "./lib/complete-task.js",
             "get-child-process": "./lib/get-child-process.js",
-            "get-taskInstances-byPinstanceId":"./lib/get-taskInstances-byPinstanceId.js"
+            "get-taskInstances-byPinstanceId": "./lib/get-taskInstances-byPinstanceId.js",
+            "release-task":"./lib/release-task.js",
+            "delegate-task":"./lib/delegate-task.js"
         }
     },
     "dependencies": {

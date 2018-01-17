@@ -8,11 +8,6 @@ The Set of nodes help make Execute the following set of actions:
 * Check-in Task (Complex Type)
 * check-out Task (Complex Type)
 
-Installing node-red-firebase
-----------------------------
-    
-    npm install https://github.com/Keith3895/node-red-jbpm.git
-
 ## Stuff Planed to complete
 * ~~Check-in Task~~
 * ~~Check-out Task~~
