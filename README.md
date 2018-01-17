@@ -16,8 +16,8 @@ Installing node-red-firebase
 ## Stuff Planed to complete
 * ~~Check-in Task~~
 * ~~Check-out Task~~
-* Process Instance Details
-* Task Instance Details
+* ~~Child-Process Instance Details~~
+* ~~Task Instance Details~~
 * **Publish on npm**
 
 ### The goal of This Module
