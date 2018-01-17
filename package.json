@@ -4,15 +4,17 @@
     "license": "MIT",
     "node-red": {
         "nodes": {
-            "start-process": "start-process.js",
-            "check-in": "check-in.js",
-            "check-out": "check-out.js",
-            "list-tasks": "list-tasks.js",
-            "claim-task": "claim-task.js",
-            "get-input": "get-input.js",
-            "set-output": "set-output.js",
-            "start-task": "start-task.js",
-            "complete-task": "complete-task.js"
+            "start-process": "./lib/start-process.js",
+            "check-in": "./lib/check-in.js",
+            "check-out": "./lib/check-out.js",
+            "list-tasks": "./lib/list-tasks.js",
+            "claim-task": "./lib/claim-task.js",
+            "get-input": "./lib/get-input.js",
+            "set-output": "./lib/set-output.js",
+            "start-task": "./lib/start-task.js",
+            "complete-task": "./lib/complete-task.js",
+            "get-child-process": "./lib/get-child-process.js",
+            "get-taskInstances-byPinstanceId":"./lib/get-taskInstances-byPinstanceId.js"
         }
     },
     "dependencies": {
