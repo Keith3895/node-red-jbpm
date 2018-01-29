@@ -18,7 +18,9 @@
             "release-task": "./lib/release-task.js",
             "delegate-task": "./lib/delegate-task.js",
             "get-processInstanceList": "./lib/get-processInstanceList.js",
-            "get-variable": "./lib/get-variable.js"
+            "get-variable": "./lib/get-variable.js",
+            "get-workitems" : "./lib/get-workitems.js",
+            "get-variableDefs": "./lib/get-variableDefs.js"
         }
     },
     "dependencies": {

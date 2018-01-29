@@ -1,0 +1,84 @@
+<script type="text/javascript">
+    RED.nodes.registerType('get-workitems', {
+        category: 'jBPM',
+        color: '#e7e7ae',
+        defaults: {
+            name: {
+                value: ""
+            },
+            url: {
+                value: ""
+            },   
+            container_name:{
+                value:""
+            },
+            process_instance_id:{
+                value:""
+            },        
+            user_id: {
+                value: ""
+            },
+            password: {
+                value: ""
+            }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'white-globe.png',
+        label: function () {
+            return this.name || 'get-workitems'
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="get-workitems">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="fa fa-globe"></i> URL</label>
+        <input type="url" id="node-input-url" placeholder="/url">
+    </div>
+    <div class="form-row">
+        <label for="node-input-container_name"><i class="icon-tag"></i> Container Name</label>
+        <input type="text" id="node-input-container_name" placeholder="Container Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-process_instance_id"><i class="icon-tag"></i> Process Instance Id</label>
+        <input type="text" id="node-input-process_instance_id" placeholder="Process Instance Id">
+    </div>
+    <div class="form-row">
+        <label for="node-input-user_id"><i class="fa fa-user"></i> UserID</label>
+        <input type="text" id="node-input-user_id" placeholder="UserID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-password"><i class="fa fa-key"></i> Password</label>
+        <input type="password" id="node-input-password" placeholder="Password">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="get-workitems">
+    <p>Get a list of task instances for a specific process Instances</p>
+    <h3>Input</h3>
+    <dl class="message-properties">
+    <dt>url
+        <span class="property-type">String</span>
+    </dt>
+    <dd> The base url of the kie-server </dd>
+    <dt>Process_instance_id
+        <span class="property-type">String</span>
+    </dt>
+    <dd>The process Instance Id.</dd>
+    <dt>UserId and Password
+        <span class="property-type">String</span>
+    </dt>
+    <dd>The Users Credentials </dd>
+    </dl>
+    <h3>Output</h3>
+    <dl class="message-properties">
+    <dt>payload
+        <span class="property-type">JSON</span>
+    </dt>
+    <dd> returns a list of Task instance details associated with the given PInstanceId </dd>
+</script>
