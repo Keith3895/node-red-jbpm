@@ -1,29 +1,50 @@
 {
-    "name": "node-red-jbpm",
-    "version": "1.1.1",
-    "license": "MIT",
-    "node-red": {
-        "nodes": {
-            "list-tasks": "./lib/list-tasks/list-tasks.js",
-            "claim-task": "./lib/claim-task/claim-task.js",
-            "get-input": "./lib/get-input/get-input.js",
-            "set-output": "./lib/set-output/set-output.js",
-            "start-task": "./lib/start-task/start-task.js",
-            "complete-task": "./lib/complete-task/complete-task.js",
-            "get-child-process": "./lib/get-child-process/get-child-process.js",
-            "get-taskInstances-byPinstanceId": "./lib/get-taskInstances-byPinstanceId/get-taskInstances-byPinstanceId.js",
-            "release-task": "./lib/release-task/release-task.js",
-            "delegate-task": "./lib/delegate-task/delegate-task.js",
-            "get-processInstanceList": "./lib/get-processInstanceList/get-processInstanceList.js",
-            "get-variable": "./lib/get-variable/get-variable.js",
-            "get-workitems": "./lib/get-workitems/get-workitems.js",
-            "get-variableDefs": "./lib/get-variableDefs/get-variableDefs.js",
-            "create-case": "./lib/create-case/create-case.js",
-            "search-activity": "./lib/search-activity/search-activity.js"
-        }
-    },
-    "dependencies": {
-        "request": "^2.81.0",
-        "validator": "^8.1.0"
+  "name": "node-red-contrib-red-jbpm",
+  "version": "1.1.4",
+  "license": "MIT",
+  "node-red": {
+    "nodes": {
+      "list-tasks": "./lib/list-tasks/list-tasks.js",
+      "claim-task": "./lib/claim-task/claim-task.js",
+      "get-input": "./lib/get-input/get-input.js",
+      "set-output": "./lib/set-output/set-output.js",
+      "start-task": "./lib/start-task/start-task.js",
+      "complete-task": "./lib/complete-task/complete-task.js",
+      "get-child-process": "./lib/get-child-process/get-child-process.js",
+      "get-taskInstances-byPinstanceId": "./lib/get-taskInstances-byPinstanceId/get-taskInstances-byPinstanceId.js",
+      "release-task": "./lib/release-task/release-task.js",
+      "delegate-task": "./lib/delegate-task/delegate-task.js",
+      "get-processInstanceList": "./lib/get-processInstanceList/get-processInstanceList.js",
+      "get-variable": "./lib/get-variable/get-variable.js",
+      "get-workitems": "./lib/get-workitems/get-workitems.js",
+      "get-variableDefs": "./lib/get-variableDefs/get-variableDefs.js",
+      "create-case": "./lib/create-case/create-case.js",
+      "search-activity": "./lib/search-activity/search-activity.js"
     }
+  },
+  "dependencies": {
+    "request": "^2.81.0",
+    "validator": "^8.1.0"
+  },
+  "keywords": [ "jbpm" ],
+  "description": "The Set of nodes help make Execute the following set of actions: * Create Process Instance * Create Task Instances * Claim Task * Start Task * Complete Task * Check-in Task (Complex Type) * check-out Task (Complex Type)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keith3895/node-red-jbpm.git"
+  },
+  "author": {
+    "name": "Keith Franklin Jathanna"
+  },
+  "bugs": {
+    "url": "https://github.com/Keith3895/node-red-jbpm/issues"
+  },
+  "homepage": "https://github.com/Keith3895/node-red-jbpm#readme"
 }
