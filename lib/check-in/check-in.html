@@ -1,10 +1,16 @@
 <script type="text/javascript">
     RED.nodes.registerType('check-in', {
         category: 'jBPM',
-        color: '#e7e7ae',
+        color: '#AAAA66',
         defaults: {
             name: {
                 value: ""
+            },
+            save:{
+                value:""
+            },
+            complete:{
+                value:""
             },
             url: {
                 value: ""
@@ -32,6 +38,14 @@
 </script>
 
 <script type="text/x-red" data-template-name="check-in">
+    <div class="form-row">
+        <input type="checkbox" id="node-input-save" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-usetls" style="width: auto"> Save </label>
+    </div>
+    <div class="form-row">
+        <input type="checkbox" id="node-input-complete" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-usetls" style="width: auto"> Complete </label>
+    </div>
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">

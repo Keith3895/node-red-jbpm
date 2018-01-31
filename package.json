@@ -19,7 +19,8 @@
       "get-workitems": "./lib/get-workitems/get-workitems.js",
       "get-variableDefs": "./lib/get-variableDefs/get-variableDefs.js",
       "create-case": "./lib/create-case/create-case.js",
-      "search-activity": "./lib/search-activity/search-activity.js"
+      "search-activity": "./lib/search-activity/search-activity.js",
+      "check-in": "./lib/check-in/check-in.js"
     }
   },
   "dependencies": {
