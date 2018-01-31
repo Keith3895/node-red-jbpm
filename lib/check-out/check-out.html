@@ -1,20 +1,26 @@
-<script type="text/javascript">
-    RED.nodes.registerType('check-in', {
+    <script type="text/javascript">
+    RED.nodes.registerType('check-out', {
         category: 'jBPM',
-        color: '#e7e7ae',
+        color: '#AAAA66',
         defaults: {
             name: {
                 value: ""
+            },
+            claim:{
+                value:""
+            },
+            start:{
+                value:""
             },
             url: {
                 value: ""
             },
             container_name: {
                 value: ""
-            },
+            },  
             task_id:{
                 value:""
-            },
+            },         
             user_id: {
                 value: ""
             },
@@ -26,12 +32,20 @@
         outputs: 1,
         icon: 'white-globe.png',
         label: function () {
-            return this.name || 'check-in'
+            return this.name || 'check-out'
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="check-in">
+<script type="text/x-red" data-template-name="check-out">
+    <div class="form-row">
+        <input type="checkbox" id="node-input-claim" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-usetls" style="width: auto"> Claim </label>
+    </div>
+    <div class="form-row">
+        <input type="checkbox" id="node-input-start" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-usetls" style="width: auto"> Start </label>
+    </div>
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -58,8 +72,8 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="check-in">
-    <p>A simple node for jBPM check in</p>
+<script type="text/x-red" data-help-name="check-out">
+    <p>A simple node for jBPM check out</p>
     <h3>Input</h3>
     <dl class="message-properties">
     <dt>url
@@ -80,3 +94,4 @@
     <dd>The Users Credentials </dd>
     </dl>
 </script>
+

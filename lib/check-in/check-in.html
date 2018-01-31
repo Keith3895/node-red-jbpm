@@ -1,20 +1,26 @@
-    <script type="text/javascript">
-    RED.nodes.registerType('check-out', {
+<script type="text/javascript">
+    RED.nodes.registerType('check-in', {
         category: 'jBPM',
-        color: '#e7e7ae',
+        color: '#AAAA66',
         defaults: {
             name: {
                 value: ""
+            },
+            save:{
+                value:""
+            },
+            complete:{
+                value:""
             },
             url: {
                 value: ""
             },
             container_name: {
                 value: ""
-            },  
+            },
             task_id:{
                 value:""
-            },         
+            },
             user_id: {
                 value: ""
             },
@@ -26,12 +32,20 @@
         outputs: 1,
         icon: 'white-globe.png',
         label: function () {
-            return this.name || 'check-out'
+            return this.name || 'check-in'
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="check-out">
+<script type="text/x-red" data-template-name="check-in">
+    <div class="form-row">
+        <input type="checkbox" id="node-input-save" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-usetls" style="width: auto"> Save </label>
+    </div>
+    <div class="form-row">
+        <input type="checkbox" id="node-input-complete" style="display: inline-block; width: auto; vertical-align: top;">
+        <label for="node-input-usetls" style="width: auto"> Complete </label>
+    </div>
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -58,8 +72,8 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="check-out">
-    <p>A simple node for jBPM check out</p>
+<script type="text/x-red" data-help-name="check-in">
+    <p>A simple node for jBPM check in</p>
     <h3>Input</h3>
     <dl class="message-properties">
     <dt>url
@@ -80,4 +94,3 @@
     <dd>The Users Credentials </dd>
     </dl>
 </script>
-

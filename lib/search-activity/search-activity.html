@@ -1,0 +1,148 @@
+<script type="text/javascript">
+    RED.nodes.registerType('search-activity', {
+        category: 'jBPM',
+        color: '#AAAA66',
+        defaults: {
+            name: {
+                value: ""
+            },
+            url: {
+                value: ""
+            },
+            method: {
+                value: ""
+            },
+            container_name: {
+                value: ""
+            },
+            process_instance_id: {
+                value: ""
+            },
+            variableName:{
+                value:""
+            },
+            variableVal:{
+                value:""
+            },
+            user_id: {
+                value: ""
+            },
+            password: {
+                value: ""
+            }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'white-globe.png',
+        label: function () {
+            return this.name || 'search-activity'
+        },
+        oneditprepare: function () {
+            console.log("before change");
+            $('.test').on('change', () => {
+                console.log($('#node-input-method').val());
+                switch($('#node-input-method').val()){
+                    case 'workitem':
+                        $('#node-input-container_name').parent().removeClass('hide');
+                        $('#node-input-process_instance_id').parent().removeClass('hide');
+                        $('#node-input-variableName').parent().addClass('hide');
+                        $('#node-input-variableVal').parent().addClass('hide');
+                    break;
+                    case 'task':
+                        $('#node-input-container_name').parent().addClass('hide');
+                        $('#node-input-variableName').parent().addClass('hide');
+                        $('#node-input-variableVal').parent().addClass('hide');
+                        $('#node-input-process_instance_id').parent().removeClass('hide');
+                    break;
+                    case 'query':
+                        $('#node-input-container_name').parent().addClass('hide');
+                        $('#node-input-variableName').parent().removeClass('hide');
+                        $('#node-input-variableVal').parent().removeClass('hide');
+                        $('#node-input-process_instance_id').parent().addClass('hide');
+                    break;
+                }
+            });
+
+        }
+    });
+
+
+</script>
+
+<script type="text/x-red" data-template-name="search-activity">
+    <div class="form-row">
+        <label for="node-input-url"><i class="fa fa-globe"></i> Url</label>
+        <input id="node-input-url" type="text" placeholder="http://">
+    </div>
+   
+    <div class="form-row">
+        <label for="node-input-method"><i class="fa fa-tasks"></i> Method</label>
+        <select type="text" id="node-input-method" class="test" style="width:70%;">
+        <option value="workitem" selected="selected">workitem</option>
+        <option value="task">task</option>
+        <option value="query">Query Filter</option>
+        </select>
+    </div>
+    
+    <div class="form-row hide">
+        <label for="node-input-container_name"><i class="fa fa-globe"></i> Container Name</label>
+        <input id="node-input-container_name" type="text" placeholder="Container Name">
+    </div>
+    <div class="form-row hide">
+        <label for="node-input-process_instance_id"><i class="fa fa-globe"></i> Process instance id</label>
+        <input id="node-input-process_instance_id" type="text" placeholder="Process instance id">
+    </div>
+    <div class="form-row hide">
+        <label for="node-input-variableName"><i class="fa fa-globe"></i> Variable Name</label>
+        <input id="node-input-variableName" type="text" placeholder="Variable Name">
+    </div>
+    <div class="form-row hide">
+        <label for="node-input-variableVal"><i class="fa fa-globe"></i> Variable Value</label>
+        <input id="node-input-variableVal" type="text" placeholder="Variable Value">
+    </div>
+    <div class="form-row">
+        <label for="node-input-user_id"><i class="fa fa-user"></i> UserID</label>
+        <input type="text" id="node-input-user_id" placeholder="UserID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-password"><i class="fa fa-key"></i> Password</label>
+        <input type="password" id="node-input-password" placeholder="Password">
+    </div>
+
+
+</script>
+
+
+<script type="text/x-red" data-help-name="search-activity">
+    <p>Node to start a jBPM process Instance in node-red</p>
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">JSON</span>
+        </dt>
+        <dd> the payload has to be a empty JSON object</dd>
+        <dt>URL
+            <span class="property-type">String</span>
+        </dt>
+        <dd> The base url of the kie-server</dd>
+        <dt>Container
+            <span class="property-type">String</span>
+        </dt>
+        <dd>The container Id of jBPM project</dd>
+        <dt>Process
+            <span class="property-type">String</span>
+        </dt>
+        <dd>The process Definition Id. </dd>
+        <dt>UserId and Password
+            <span class="property-type">String</span>
+        </dt>
+        <dd>The Users Credentials </dd>
+    </dl>
+    <h3>Output</h3>    
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">JSON</span>
+        </dt>
+        <dd> the process Instance Id (pInstanceId)</dd>
+    </dl>
+</script>
