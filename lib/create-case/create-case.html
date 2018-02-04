@@ -6,6 +6,9 @@
             name: {
                 value: ""
             },
+            content_type:{
+                value:""
+            },
             url: {
                 value: ""
             },
@@ -35,6 +38,13 @@
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-content_type"><i class="fa fa-tasks"></i> Content-Type</label>
+        <select type="text" id="node-input-content_type" class="test" style="width:70%;">
+        <option value="application/json" selected="selected">json</option>
+        <option value="application/xml">xml</option>
+        </select>
     </div>
     <div class="form-row">
         <label for="node-input-url"><i class="fa fa-globe"></i> URL</label>

@@ -14,7 +14,11 @@
     "request": "^2.81.0",
     "validator": "^8.1.0"
   },
-  "keywords": [ "jbpm", "modeler","node-red" ],
+  "keywords": [
+    "jbpm",
+    "modeler",
+    "node-red"
+  ],
   "description": "The Set of nodes help make Execute the following set of actions: * Create Process Instance * Create Task Instances * Claim Task * Start Task * Complete Task * Check-in Task (Complex Type) * check-out Task (Complex Type)",
   "main": "index.js",
   "directories": {
