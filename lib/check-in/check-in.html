@@ -6,14 +6,17 @@
             name: {
                 value: ""
             },
-            content_type:{
-                value:""
+            content_type: {
+                value: ""
             },
-            save:{
-                value:""
+            owner: {
+                value: ""
             },
-            complete:{
-                value:""
+            save: {
+                value: ""
+            },
+            complete: {
+                value: ""
             },
             url: {
                 value: ""
@@ -21,8 +24,8 @@
             container_name: {
                 value: ""
             },
-            task_id:{
-                value:""
+            task_id: {
+                value: ""
             },
             user_id: {
                 value: ""
@@ -80,6 +83,10 @@
         <label for="node-input-password"><i class="fa fa-key"></i> Password</label>
         <input type="password" id="node-input-password" placeholder="Password">
     </div>
+    <div class="form-row">
+        <label for="node-input-owner"><i class="fa fa-user"></i> Owner</label>
+        <input type="text" id="node-input-owner" placeholder="Owner">
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="check-in">
@@ -89,8 +96,24 @@
     <dt>url
         <span class="property-type">String</span>
     </dt>
-    <dd> The base url of the kie-server </dd>
-    <dt>container
+    <dd> The base url of the kie-server </dd>    
+    <dt>content_type
+        <span class="property-type">String</span>
+    </dt>
+    <dd>Content-Type of the data being sent. Can be <em>application/json</em> or <em>application/xml</em> </dd>
+    <dt>payload
+            <span class="property-type">JSON/XML</span>
+    </dt>
+    <dd> the payload has to be a JSON object or an XML </dd>
+    <dt>owner
+        <span class="property-type">String</span>
+    </dt>
+    <dd>for SSO application</dd>
+    <dt>save & complete
+            <span class="property-type">Boolean</span>
+    </dt>
+    <dd>To trigger a claim or save event on jBPM</dd>
+    <dt>container_name
         <span class="property-type">String</span>
     </dt>
     <dd>The container Id of jBPM project</dd>
@@ -98,9 +121,13 @@
         <span class="property-type">String</span>
     </dt>
     <dd>The task ID</dd>
-    <dt>UserId and Password
+    <dt>user_id and password
         <span class="property-type">String</span>
     </dt>
     <dd>The Users Credentials </dd>
+    </dl>
+    <h3>Output</h3>
+    <dl class="message-properties">
+        <dd>Status of request response</dd>
     </dl>
 </script>
