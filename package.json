@@ -1,54 +1,7 @@
 {
-  "_from": "modeler-jbpm",
-  "_id": "modeler-jbpm@1.1.16",
-  "_inBundle": false,
-  "_integrity": "sha512-GnVJSqmsjpg/38dYfSYjRB8T+7WiYUbSXXohlQK3w5R4hUSSiyGmcG3//TQi1cetfRj9BCHYxYHO0QH+0JOEzw==",
-  "_location": "/modeler-jbpm",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "modeler-jbpm",
-    "name": "modeler-jbpm",
-    "escapedName": "modeler-jbpm",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/modeler-jbpm/-/modeler-jbpm-1.1.15.tgz",
-  "_shasum": "2539637f63694accc726777f89a6b3c6b4a917da",
-  "_spec": "modeler-jbpm",
-  "_where": "/Users/keith2/Documents/test",
-  "author": {
-    "name": "Keith Franklin Jathanna"
-  },
-  "bugs": {
-    "url": "https://github.com/Keith3895/node-red-jbpm/issues"
-  },
-  "bundleDependencies": false,
-  "dependencies": {
-    "request": "^2.81.0",
-    "validator": "^8.1.0"
-  },
-  "deprecated": false,
-  "description": "The Set of nodes help make Execute the following set of actions: * Create Process Instance * Create Task Instances * Claim Task * Start Task * Complete Task * Check-in Task (Complex Type) * check-out Task (Complex Type)",
-  "devDependencies": {},
-  "directories": {
-    "lib": "lib"
-  },
-  "homepage": "https://github.com/Keith3895/node-red-jbpm#readme",
-  "keywords": [
-    "jbpm",
-    "modeler",
-    "node-red"
-  ],
-  "license": "MIT",
-  "main": "index.js",
   "name": "modeler-jbpm",
+  "version": "1.1.16",
+  "license": "MIT",
   "node-red": {
     "nodes": {
       "create-case": "./lib/create-case/create-case.js",
@@ -57,12 +10,32 @@
       "check-out": "./lib/check-out/check-out.js"
     }
   },
+  "dependencies": {
+    "validator": "^8.1.0"
+  },
+  "keywords": [
+    "jbpm",
+    "modeler",
+    "node-red"
+  ],
+  "description": "The Set of nodes help make Execute the following set of actions: * Create Process Instance * Create Task Instances * Claim Task * Start Task * Complete Task * Check-in Task (Complex Type) * check-out Task (Complex Type)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Keith3895/node-red-jbpm.git"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": {
+    "name": "Keith Franklin Jathanna"
   },
-  "version": "1.1.15"
+  "bugs": {
+    "url": "https://github.com/Keith3895/node-red-jbpm/issues"
+  },
+  "homepage": "https://github.com/Keith3895/node-red-jbpm#readme"
 }
