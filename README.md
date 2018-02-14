@@ -13,17 +13,11 @@ The Set of nodes help make Execute the following set of actions:
 ##Install:
 
 ```
-  npm install node-red-contrib-red-jbpm
+  npm install modeler-jbpm
 ```
 
 ---
 
-## Stuff Planed to complete
-* ~~Check-in Task~~
-* ~~Check-out Task~~
-* ~~Child-Process Instance Details~~
-* ~~Task Instance Details~~
-* **Publish on npm**
 
 ### The goal of This Module
 The Goal of this module is to create a simple and modular approach to making Remote API Calls to jBPM Workbench.
