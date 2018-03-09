@@ -126,36 +126,43 @@
 
 </script>
 
-
 <script type="text/x-red" data-help-name="search-activity">
     <p>Node to start a jBPM process Instance in node-red</p>
     <h3>Inputs</h3>
     <dl class="message-properties">
-        <dt>payload
-            <span class="property-type">JSON</span>
+        <dt>content_type
+            <span class="property-type">String</span>
         </dt>
-        <dd> the payload has to be a empty JSON object</dd>
-        <dt>URL
+        <dd>Content-Type of the data being sent. Can be <em>application/json</em> or <em>application/xml</em> </dd>
+        <dt>payload
+                <span class="property-type">JSON/XML</span>
+        </dt>
+        <dd> the payload has to be a JSON object or an XML </dd>
+        <dt>url
             <span class="property-type">String</span>
         </dt>
         <dd> The base url of the kie-server</dd>
-        <dt>Container
+        <dt>container_name
             <span class="property-type">String</span>
         </dt>
         <dd>The container Id of jBPM project</dd>
-        <dt>Process
+        <dt>process_instance_id
             <span class="property-type">String</span>
         </dt>
-        <dd>The process Definition Id. </dd>
-        <dt>UserId and Password
+        <dd>The process instance Id. </dd>
+        <dt>user_id and password
             <span class="property-type">String</span>
         </dt>
         <dd>The Users Credentials </dd>
+        <dt>variableName & variableVal
+            <span class="property-type">String</span>
+        </dt>
+        <dd> for query filter</dd>
     </dl>
     <h3>Output</h3>    
     <dl class="message-properties">
         <dt>payload
-            <span class="property-type">JSON</span>
+            <span class="property-type">JSON/XML</span>
         </dt>
         <dd> the process Instance Id (pInstanceId)</dd>
     </dl>
