@@ -1,17 +1,18 @@
 {
   "name": "modeler-jbpm",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "MIT",
   "node-red": {
     "nodes": {
       "create-case": "./lib/create-case/create-case.js",
       "search-activity": "./lib/search-activity/search-activity.js",
       "check-in": "./lib/check-in/check-in.js",
-      "check-out": "./lib/check-out/check-out.js"
+      "check-out": "./lib/check-out/check-out.js",
+      "release-task": "./lib/release-task/release-task.js",
+      "delegate-task":"./lib/delegate-task/delegate-task.js"
     }
   },
   "dependencies": {
-    "validator": "^8.1.0"
   },
   "keywords": [
     "jbpm",

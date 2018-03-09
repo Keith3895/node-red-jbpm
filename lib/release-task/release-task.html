@@ -1,0 +1,115 @@
+<script type="text/javascript">
+    RED.nodes.registerType('release-task', {
+        category: 'jBPM',
+        color: '#AAAA66',
+        defaults: {
+            name: {
+                value: ""
+            },
+            content_type: {
+                value: ""
+            },
+            owner: {
+                value: ""
+            },
+            url: {
+                value: ""
+            },
+            container_name: {
+                value: ""
+            },
+            task_id: {
+                value: ""
+            },
+            user_id: {
+                value: ""
+            },
+            password: {
+                value: ""
+            }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'white-globe.png',
+        label: function () {
+            return this.name || 'release-task'
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="release-task">
+    <div class="form-row">
+        <label for="node-input-content_type"><i class="fa fa-tasks"></i> Content-Type</label>
+        <select type="text" id="node-input-content_type" class="test" style="width:70%;">
+        <option value="application/json" selected="selected">json</option>
+        <option value="application/xml">xml</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="fa fa-globe"></i> URL</label>
+        <input type="url" id="node-input-url" placeholder="/url">
+    </div>
+    <div class="form-row">
+        <label for="node-input-container_name"><i class="icon-tag"></i> Container</label>
+        <input type="text" id="node-input-container_name" placeholder="Container">
+    </div>
+    <div class="form-row">
+        <label for="node-input-task_id"><i class="icon-tag"></i> Task Id</label>
+        <input type="text" id="node-input-task_id" placeholder="Task Id">
+    </div>
+    <div class="form-row">
+        <label for="node-input-user_id"><i class="fa fa-user"></i> UserID</label>
+        <input type="text" id="node-input-user_id" placeholder="UserID">
+    </div>
+    <div class="form-row">
+        <label for="node-input-password"><i class="fa fa-key"></i> Password</label>
+        <input type="password" id="node-input-password" placeholder="Password">
+    </div>
+    <div class="form-row">
+        <label for="node-input-owner"><i class="fa fa-user"></i> Owner</label>
+        <input type="text" id="node-input-owner" placeholder="Owner">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="release-task">
+    <p>A simple node for jBPM check in</p>
+    <h3>Input</h3>
+    <dl class="message-properties">
+    <dt>url
+        <span class="property-type">String</span>
+    </dt>
+    <dd> The base url of the kie-server </dd>    
+    <dt>content_type
+        <span class="property-type">String</span>
+    </dt>
+    <dd>Content-Type of the data being sent. Can be <em>application/json</em> or <em>application/xml</em> </dd>
+    <dt>owner
+        <span class="property-type">String</span>
+    </dt>
+    <dd>for SSO application</dd>
+    <dt>save & complete
+            <span class="property-type">Boolean</span>
+    </dt>
+    <dd>To trigger a claim or save event on jBPM</dd>
+    <dt>container_name
+        <span class="property-type">String</span>
+    </dt>
+    <dd>The container Id of jBPM project</dd>
+    <dt>task_id
+        <span class="property-type">String</span>
+    </dt>
+    <dd>The task ID</dd>
+    <dt>user_id and password
+        <span class="property-type">String</span>
+    </dt>
+    <dd>The Users Credentials </dd>
+    </dl>
+    <h3>Output</h3>
+    <dl class="message-properties">
+        <dd>Status of request response</dd>
+    </dl>
+</script>
